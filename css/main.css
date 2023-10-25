@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {font-size: 62.5%;} /* 62.5%=10px */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+table { border-collapse: collapse; width: 100%; }
+ol,ul { list-style: none; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; }
+img { vertical-align: top; }
+a { text-decoration:none; color:#000; }
+caption { display: none; }
+address,em { font-style: normal; }
+button {border: 0; background: transparent; }
+/* 버튼 초기화 */
+fieldset, input, textarea, select {vertical-align: middle; border: 0;}
+/* 폼요소 버티컬 얼라인이 안맞아서 중앙 정렬 */
+legend, caption {display: none;}
+
+/* 공통사항 */
+body { font-family: 'Noto Sans KR', sans-serif; font-size: 1.6rem; line-height: 1.6; color: #000; }
+#wrap {overflow-x:hidden; }
+.inner { max-width: calc(100% - 200px); margin: 0 auto;}
+.btn_more {padding-bottom: 40px;}
+
+@media (max-width: 1600px){
+.inner {max-width: calc(100% - 160px);}
+}
+@media (max-width: 1400px){
+.inner {max-width: calc(100% - 140px);}
+}
+@media (max-width: 1200px){
+.inner {max-width: calc(100% - 120px);}
+}
+@media (max-width: 1000px){
+.inner {max-width: calc(100% - 100px);} 
+}
+@media (max-width: 768px){
+.inner {max-width: calc(100% - 50px);}
+}
+
+#main {padding-top: 73px ;}
+#main section {padding: 100px 0;}
+#main h2 {font-size: 5rem;}
+#main h2 + p {padding: 20px 0; font-size: 2.4rem; color: #999;}
+#main .btn_more a {border-bottom: 1px #ccc solid; color: #999; font-weight: 700;}
+
+@media (max-width:1200px) {
+    #main section {padding: 80px 0;}
+    #main h2{font-size: 4rem;}
+    #main h2 + p {font-size: 2rem;}
+    
+    }
+    @media (max-width:768px) {
+        #main section {padding: 60px 0;}
+        #main h2{font-size: 3rem;}
+        #main h2 + p {font-size: 1.6rem;}
+        }
+
+
+
+
+/* header */
+#header {z-index: 999; position: fixed; left: 0; top: 0; width: 100%; background: rgba(255,255,255, 0.8);  border-bottom: 1px solid #999;}
+/* z-index: 999;로 헤더를 제일 위로 올린다 */
+#header .inner {height: 73px; align-items: center; position: relative; display: flex; justify-content: space-between;}
+#header h1{position: absolute; left: 50%; transform: translateX(-50%) ; top: 28px;}
+/* 포지션앱솔루트를 줘서 flex에서 벗어남./ transform: translateX(-50%) ; 으로 글자 왼쪽으로 옮겨서 가운데 맞추기 */
+
+#header .gnb {display: flex;}
+#header .gnb > li {position: relative;}
+#header .gnb > li > a {display: block; font-size: 20px; padding: 10px 20px;}
+
+/* gnb에 있는 아랫줄 */
+#header .gnb > li > a::after{transition: all 0.5s; position: absolute; left: 50%; transform: translateX(-50%); bottom: -11px; content: ''; width: 0; height: 3px; background: #000; display: block;}
+#header .gnb > li:hover > a::after {width: 100%;}
+
+
+/* 2차메뉴 */
+#header .gnb > li .depth2 {width: 500px; display: none; position: absolute; left: 0; top: 50px;}
+#header .gnb > li .depth2 li{display: inline-block;}
+#header .gnb > li .depth2 li a {display: block; padding: 20px;}
+
+#header .gnb > li:hover .depth2 {display: block;}
+    /* 디스플레이 none을 보이게한다  */
+
+/* 햄버거메뉴 */
+#header .ham{text-indent: -9999px; width: 24px; height: 24px; background: url('../images/ham.svg') no-repeat center; cursor: pointer; display: none;}
+/* pc에서는 보이면 안되므로 none */
+
+
+
+#header .util{display: flex; gap: 20px;}
+#header .util .btn_search {width: 24px; height: 24px;  background: url('../images/search.svg') no-repeat center; text-indent:-9999px; cursor: pointer;}
+/* 버튼 리셋해서 모양 넣기
+cursor: pointer; 올리면 손가락 나오게  클릭할 수 있는 요소라고 넣기.
+*/
+
+@media (max-width:1200px){
+    #header .ham{display: block;}
+    #header .gnb{display: none;}
+    #header .util li:not(:last-child) {display: none;}
+    /* 마지막 것만 제외하고 */
+}
+
+
+
+
+
+
+
+
+/* sec1 */
+#sec1 {text-align: center;}
+#sec1 h2{font-family: 'DM Serif Text', serif; font-size: 8rem; font-weight: 400;}
+/* 폰트사이즈 80이라 8rem  */
+#sec1 h2 + p {padding: 20px 0; font-size: 2.4rem; color: #999; letter-spacing: -1px;}
+#sec1 img {max-width: 100%;}
+
+@media (max-width:1200px) {
+#sec1 h2{font-size: 6rem;}
+#sec1 h2 + p {font-size: 2rem;}
+
+}
+@media (max-width:768px) {
+    #sec1 h2{font-size: 4rem;}
+    #sec1 h2 + p {font-size: 1.6rem;}
+    }
+
+
+
+
+/* sec2 */
+#sec2 {position: relative; padding: 100px 0; border-top: 1px #ccc solid; border-bottom: 1px solid #ccc;}
+#sec2:before {position: absolute; left: 50%; top: 0; content: ''; width: 1px; height: 100%; display: block; background: #ccc;}
+#sec2 .inner {flex-wrap: wrap; align-items: center; display: flex; justify-content: space-between;}
+/* 중앙정렬 flex준 곳에 align-items 주면된다 */
+#sec2 .inner > * {width: calc((100% - 200px) /2);}
+/* 이너 바로 밑에 있는 모든 요소 */
+
+#sec2 .txt {text-align: center;}
+#sec2 img {width: 100%; max-width: 100%;}
+
+@media (max-width:1200px) {
+    #sec2 .inner > * {width: 100%;}
+    #sec2:before {display: none;}
+}
+/* #sec2 .inner > * 칸이 두개였다가 화면이 작아지면 둘 다 칸 화면이 100%로 된다.  */
+
+
+/* se3 */
+#sec3 {text-align: center;}
+#sec3 ul{display: flex; justify-content: space-between;}
+#sec3 ul li {position: relative; width: calc((100% - 90px)/4);}
+#sec3 ul li img {max-width: 100%;}
+
+#sec3 ul li span {padding: 10px 20px; display: inline-block; position: absolute; left: 0; top: 0; background: #000; color: #fff;}
+#sec3 br {display: none;}
+
+
+@media (max-width:1200px){
+    #sec3 ul li {width: calc((100% - 30px)/2);}
+    #sec3 ul li:nth-child(n+3) {display: none;}
+
+}
+
+@media (max-width:768px){
+    #sec3 br {display: block;}
+    /* 줄이 줄어드는 것처럼 줄넘김가능 */
+    #sec3 ul li {width: 100%;}
+    #sec3 ul li:not(:first-child) {display: none;}
+}
+
+
+/* 3번 이후에 전부 다 = n+3, 변경을 하는 선택자는 이름이 다 같아야한다. 
+li: not(:first-child) = li중에서 첫번째 아이가 아닌 것.*/
+
+
+.txt_center {text-align: center;}
+
+/* sec4 */
+#sec4 {border-top: 1px #ccc solid; border-bottom: 1px solid #ccc; }
+#sec4 ul {display:flex; flex-wrap: wrap;}
+#sec4 ul li {width: calc(100% / 4)}
+#sec4 ul li:hover {color: rgba(0,0,0,0.2);}
+#sec4 ul li img {max-width: 100%;}
+@media (max-width: 1200px) {
+    #sec4 ul li {width: calc(100% / 2);}
+}
+
+/* footer */
+#footer {padding: 100px 0;}
+#footer input[type="text"] {padding: 0 20px; font-size: 1.6rem; font-family: 'Noto Sans KR', sans-serif; width: 220px; height: 40px; border: 1px solid #333; }
+#footer input::placeholder {color: #ccc;}
+#footer input[type="submit"] {font-family: 'Noto Sans KR', sans-serif; font-size: 1.6rem; width: 80px; height: 40px; background: #333; color: #fff;}
+/* 인풋 타입때문에 속성선택자 사용 */
+
+
+#footer address {padding: 20px 0; display: flex; gap: 20px; justify-content: center; color: #999; }
+#footer .copy {color: #999; padding-bottom: 50px;}
+#footer .footer_logo{position: relative; padding-top: 20px;}
+#footer .footer_logo:before {position: absolute; left: 50%; transform: translate(-50%); top: 0; content: ''; display: block; width: 40px; height: 1px; background:#ccc;}
+
+@media (max-width:768px){
+    #footer {font-size: 1.4rem;}
+    #footer address {flex-direction: column; gap: 10px;}
+
+}
+
+
