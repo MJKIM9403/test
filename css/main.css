@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+
+html {font-size: 62.5%;} /* 62.5%=10px */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+table { border-collapse: collapse; width: 100%; }
+ol,ul { list-style: none; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; }
+img { vertical-align: top; }
+a { text-decoration:none; color:#000; }
+caption { display: none; }
+address,em { font-style: normal; }
+button {border: 0; background: transparent; }
+/* 버튼 초기화 */
+fieldset, input, textarea, select {vertical-align: middle; border: 0;}
+/* 폼요소 버티컬 얼라인이 안맞아서 중앙 정렬 */
+legend, caption {display: none;}
+
+/* 공통사항 */
+body {font-family: 'Noto Serif KR', serif;font-size: 1.6rem; line-height: 1.6; color: #000; }
+#wrap {overflow-x:hidden; }
+.inner { max-width: calc(100% - 200px); margin: 0 auto;}
+section:not(:first-child) {text-align: center;}
+h2 { padding: 150px 0 20px 0; text-align: center;  font-family: 'Noto Serif KR', serif;font-size: 3rem; font-weight: 400;}
+dd {text-align: center; font-family: 'Noto Serif KR', serif;font-size: 2rem; padding: 20px 0 10px 0; }
+p, dt {padding-bottom: 20px; font-size: 1rem; color: #979797; text-align: center; }
+/* 더보기 */
+.btn_more  {font-size: 1rem; position: relative; text-align: center; padding-bottom:30px;  }
+.btn_more::before {position: absolute; left: 50%; transform: translate(-50%); bottom: 30px; content: ''; display: block; width: 54px; height: 1px; background:#333;}
+
+@media (max-width: 1600px){
+.inner {max-width: calc(100% - 160px);}
+}
+@media (max-width: 1400px){
+.inner {max-width: calc(100% - 140px);}
+}
+@media (max-width: 1200px){
+.inner {max-width: calc(100% - 120px);}
+h2 {padding: 100px 0 20px 0;}
+    }
+@media (max-width: 1000px){
+.inner {max-width: calc(100% - 100px);} 
+    }
+@media (max-width: 768px){
+.inner {max-width: calc(100% - 50px);}
+    }
+    
+
+/* header */
+#header {height: 100px; z-index: 999; position: absolute; left: 0; top: 0; width: 100%;}
+#header .inner { align-items: center; font-family: 'Noto Serif KR', serif; padding:50px 0; display: flex; justify-content: space-between;}
+#header .inner .gnb {text-align: center; display: flex; }
+/* header util */
+#header .inner .util {display: flex;gap: 20px;}
+#header .inner .gnb li {position: relative; }
+#header .inner .gnb li a {display: block; padding: 10px 20px;}
+#header .inner .util li:nth-child(1) {background: url('../images/util_ico_01.svg') no-repeat center; width: 24px; height: 24px; text-indent: -9999px; cursor: pointer; }
+#header .inner .util li:nth-child(2) {background: url('../images/util_ico_02.svg') no-repeat center; width: 24px; height: 24px; text-indent: -9999px; cursor: pointer; }
+#header .inner .util li:nth-child(3) {background: url('../images/util_ico_03.svg') no-repeat center; width: 24px; height: 24px; text-indent: -9999px; cursor: pointer; }
+
+/* 2차메뉴 */
+#header .gnb > li .depth2 { background: #000; width: 100%; display: none; position: absolute; left: 0; top: 40px;}
+#header .gnb > li .depth2 li a {font-size: 1.4rem; color: #fff; display: block; padding: 10px 0;}
+#header .gnb > li:hover .depth2 {display: block;}
+
+
+
+
+/* 햄버거 */
+#header .ham{text-indent: -9999px; width: 24px; height: 24px; background: url('../images/ham.svg') no-repeat center; cursor: pointer; display: none;}
+
+
+@media (max-width:1200px){
+        #header .ham{display: block;}
+        #header .inner .gnb {display: none;}
+        #header .inner .util {display: none;}
+        /* 마지막 것만 제외하고 */
+    }
+@media (max-width: 768px){
+h1 img {width: 160px;}
+}
+
+/* sec1 */
+#wrap { position: relative;}
+#main #sec1 { height: 100vh; background: #F9F1E9 url('../images/main_visual_01.png') no-repeat center/cover;  
+    /* 배경줄 때 색상을 먼저 주고 그 뒤에 이미지 */
+ }
+#main #sec1 .inner h2{top: 0; right: 0; font-family: 'Noto Serif KR', serif; text-align: right; font-size: 3rem; font-weight: 400; padding-bottom: 20px;}
+#main #sec1 .inner h2 .brbr {display: none;}
+#main #sec1 .inner p {color: #ccc; font-family: 'Noto Serif KR', serif; text-align: right;}
+
+/* sec1에 background말고 이미지 넣었을 때
+#sec1{height: 100vh;}
+#sec1 img {object-fit: cover; height: 100%; height: 100%;}
+ -->백그라운드로 주면 백그라운드 사이즈로 주면된다.*/
+
+    @media (max-width: 768px) {
+        #main #sec1 .inner h2 .brbr{display: block;}
+        #main #sec1 .inner h2 {font-size: 2rem;}
+    }
+
+
+/* sec2 */
+#main #sec2 ul{ display: flex; justify-content: space-between;}
+#main #sec2 ul li {width: calc(100% / 3);}
+#main #sec2 ul li img{max-width: 100%;}
+#main #sec2 h2::before {padding-bottom: 10px ; letter-spacing: 1px; font-size: 1rem; content: "Baraboda Brand Story"; color: #999; display: block; }
+
+@media (max-width: 1200px){
+    #main #sec2 ul li {width: calc(100% / 2);}
+    #main #sec2 ul li:nth-child(n+3) {display: none;}
+    #main #sec2 .inner p {display: none;}
+}
+@media (max-width: 768px){
+    #main #sec2 ul li h2 {font: 2rem;}
+    #main #sec2 ul li {width: 100%;}
+    #main #sec2 ul li:not(:nth-child(1)) {display: none;}
+}
+
+
+/* sec3 바라보다 */
+#sec3 {background: #F9F1E9;}
+#main #sec3 ul{display: flex; gap: 20px; justify-content: space-between;}
+#main #sec3 h2::before {letter-spacing: 1px; font-size: 1rem; content: "Baraboda Specialty Coffee"; color: #999; display: block; }
+#main #sec3 ul li  {width: calc((100% - 60px) / 4); padding-bottom: 150px;}
+#main #sec3 ul li img{border-radius: 50%; max-width: 100%;}
+
+@media (max-width: 1200px){
+    #main #sec3 ul li {width: calc(100% / 2); padding-bottom: 100px;}
+    #main #sec3 ul li:nth-child(n+4) {display: none;}
+    #main #sec3 .inner p {display: none;
+    }
+}
+@media (max-width: 768px){
+    #main #sec3 ul li {width: 100%;}
+    #main #sec3 ul li:not(:nth-child(1)) {display: none;}
+}
+
+/* sec4 비디오들어간거 */
+#main #sec4 h2::before {letter-spacing: 1px; font-size: 1rem; content: "Baraboda Coffee Review"; color: #999; display: block; }
+#main #sec4 video {object-fit: cover;max-width: calc(100% - 100px);}
+
+
+/* footer */
+#footer {margin-top: 200px; padding: 50px 0; background: #EEEEEE;}
+#footer .footer_txt {display: flex; justify-content: center;}
+#footer .footer_txt .footer_logo img {padding: 30px;}
+#footer .footer_txt li span {color: #999;}
+@media (max-width: 1200px) {
+    #footer {font-size: 1.4rem; margin-top: 100px;}
+    #footer .footer_txt{flex-direction: column;}
+
+
+}
